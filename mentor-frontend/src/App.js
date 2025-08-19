@@ -19,20 +19,19 @@ const App = () => {
   const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
   useEffect(() => {
-    // define fetchMentors inside useEffect to satisfy ESLint
-    const fetchMentors = async () => {
-      try {
-        const response = await fetch(`${API_URL}/mentors`);
-        const data = await response.json();
-        setMentors(data);
-        setFilteredMentors(data);
-      } catch (error) {
-        console.error('Error fetching mentors:', error);
-      }
-    };
-
     fetchMentors();
-  }, [API_URL]); // API_URL as dependency
+  }, []);
+
+  const fetchMentors = async () => {
+    try {
+      const response = await fetch(`${API_URL}/mentors`);
+      const data = await response.json();
+      setMentors(data);
+      setFilteredMentors(data);
+    } catch (error) {
+      console.error('Error fetching mentors:', error);
+    }
+  };
 
   const handleFilterChange = (newFilter) => {
     setFilter(newFilter);
@@ -57,10 +56,10 @@ const App = () => {
     <div className="app">
       <h1>Mentor Management System</h1>
 
-      {/* Filter section */}
+      {/* Filter sabse upar */}
       <MentorFilter filter={filter} onFilterChange={handleFilterChange} />
 
-      {/* Button to toggle Add Mentor form */}
+      {/* Button centre me */}
       <div className="button-container">
         <button 
           onClick={() => setShowAddForm(!showAddForm)} 
@@ -70,10 +69,9 @@ const App = () => {
         </button>
       </div>
 
-      {/* Add Mentor Form */}
       {showAddForm && <AddMentor onMentorAdded={handleMentorAdded} />}
 
-      {/* Mentor List */}
+      {/* Mentor List sabse niche */}
       <MentorList mentors={filteredMentors} />
     </div>
   );

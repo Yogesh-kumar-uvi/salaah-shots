@@ -1,4 +1,4 @@
-// src/components/MentorList.js
+
 import React from 'react';
 
 const MentorList = ({ mentors }) => {
