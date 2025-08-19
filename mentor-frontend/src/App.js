@@ -15,13 +15,16 @@ const App = () => {
   });
   const [showAddForm, setShowAddForm] = useState(false);
 
+  // 👇 API ka base URL env file se aayega
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+
   useEffect(() => {
     fetchMentors();
   }, []);
 
   const fetchMentors = async () => {
     try {
-      const response = await fetch('http://localhost:5000/mentors');
+      const response = await fetch(`${API_URL}/mentors`);
       const data = await response.json();
       setMentors(data);
       setFilteredMentors(data);

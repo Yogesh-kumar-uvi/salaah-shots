@@ -11,6 +11,9 @@ const AddMentor = ({ onMentorAdded }) => {
         available: true,
     });
 
+    // 👇 API base URL env se
+    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setFormData({
@@ -27,7 +30,7 @@ const AddMentor = ({ onMentorAdded }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/mentors', formData);
+            const response = await axios.post(`${API_URL}/mentors`, formData);
             onMentorAdded(response.data);
 
             // Reset form
