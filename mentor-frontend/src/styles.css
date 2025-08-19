@@ -1,0 +1,181 @@
+/* src/styles.css */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f5f7fa, #e9eff5);
+  color: #333;
+}
+
+/* Main App Container */
+.app {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Mentor Filter */
+.mentor-filter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  padding: 1.2rem;
+  background: #f0f4f8;
+  border-radius: 12px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.mentor-filter input,
+.mentor-filter select {
+  padding: 0.85rem;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.mentor-filter input:focus,
+.mentor-filter select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.3);
+}
+
+/* Mentor List */
+.mentor-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.mentor-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mentor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.mentor-card h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.25rem;
+  color: #2c3e50;
+}
+
+.mentor-card p {
+  margin: 0.5rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Add Mentor Form */
+.add-mentor-form {
+  background: #fdfdfd;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  margin: 1.5rem 0;
+}
+
+.add-mentor-form h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.2);
+}
+
+/* Checkbox */
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox label {
+  margin-left: 0.5rem;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+
+.checkbox input {
+  width: auto;
+}
+
+/* Buttons */
+.submit-btn, .toggle-form-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover, .toggle-form-btn:hover {
+  background: linear-gradient(135deg, #2980b9, #1f6391);
+  transform: scale(1.05);
+}
+
+/* Centering Add Mentor Button */
+.toggle-form-btn {
+  display: block;
+  margin: 2rem auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .mentor-filter {
+    grid-template-columns: 1fr;
+  }
+}
